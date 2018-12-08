@@ -1,0 +1,27 @@
+{
+    "one": {
+        "min": 250000,
+        "percentage": 20,
+        "fixed": 0
+    },
+    "two": {
+        "min": 400000,
+        "percentage": 25,
+        "fixed": 30000
+    },
+    "three": {
+        "min": 800000,
+        "percentage": 30,
+        "fixed": 130000
+    },
+    "four": {
+        "min": 2000000,
+        "percentage": 32,
+        "fixed": 490000
+    },
+    "five": {
+        "min": 8000000,
+        "percentage": 35,
+        "fixed": 2410000
+    }
+}

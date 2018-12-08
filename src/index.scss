@@ -1,0 +1,13 @@
+@import 'globals';
+
+@include react-md-everything;
+
+html {
+    min-height: 100vh;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}

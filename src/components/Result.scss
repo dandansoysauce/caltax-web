@@ -1,0 +1,30 @@
+.result-container {
+    background-color: #424242;
+    padding: 55px;
+    min-height: 100vh;
+
+    h1 {
+        color: white;
+    }
+}
+
+.cards-container {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    .card {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+}
+
+.deduction-header {
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.results {
+    margin-top: 30px;
+}
