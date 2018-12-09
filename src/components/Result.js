@@ -3,6 +3,7 @@ import { Card, CardTitle, CardText, Grid, Cell } from 'react-md'
 import './Result.scss'
 import sssdata from '../data/sss.json'
 import wholding from '../data/wholding.json'
+import philhealth from '../data/philhealth.json'
 
 const style = {
     wholdingCard: {
@@ -49,6 +50,19 @@ class Result extends Component {
                     } 
                 })
             }
+
+            return amount
+        }
+
+        function getPhilhealth(monthly) {
+            const getPhData = philhealth.table
+            let amount = 0
+
+            getPhData.forEach(contrib => {
+                if (monthly >= contrib.min && monthly <= contrib.max) {
+                    amount = contrib.value.toFixed(2)
+                }
+            })
 
             return amount
         }
@@ -114,7 +128,7 @@ class Result extends Component {
                             <Card style={style.normalCard}>
                                 <CardTitle title="Philhealth" subtitle="Contribution" />
                                 <CardText style={style.normalCardText}>
-                                    <p>&#8369; {(getWholding(this.props.salaryToCompute))}</p>
+                                    <p>&#8369; {getPhilhealth(this.props.salaryToCompute)}</p>
                                 </CardText>
                             </Card>
                         </Cell>
