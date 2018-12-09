@@ -9,4 +9,8 @@ $ yarn install
 $ yarn start
 ```
 
-_Made with ReactJS_
+## Thanks
+* [ReactJS](https://github.com/facebook/react/) - JavaScript library
+* [DOF Website](http://www.dof.gov.ph) - TRAIN Law explanation
+* [SSS Website](https://www.sss.gov.ph/) - Social Security System's Contribution Table
+* [Philhealth Website](https://www.philhealth.gov.ph) - Philhealth Contribution Table
