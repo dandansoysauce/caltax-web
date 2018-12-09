@@ -30,7 +30,7 @@ class App extends Component {
             pagibigChange={this.pagibigChange.bind(this)} />
         </Cell>
         <Cell size={8} tabletSize={12} phoneSize={12}>
-          <Result salaryToCompute={this.state.salary} />
+          <Result salaryToCompute={this.state.salary} pagibig={this.state.pagibig} />
         </Cell>
       </Grid>
     );

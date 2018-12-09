@@ -21,10 +21,6 @@ const style = {
 };
 
 class Result extends Component {
-    constructor(props){
-        super(props)
-    }
-
     render() {
         function getInfoFromBracket(bracket, annualAmount, addFixed = true) {
             let amount = 0
@@ -41,6 +37,20 @@ class Result extends Component {
             }
 
             return (amount / 12).toFixed(2)
+        }
+
+        function getSss(monthly) {
+            const getsssData = sssdata.table
+            let amount = 0
+            if (monthly >= 1000) {
+                getsssData.forEach(contrib => {
+                    if (monthly >= contrib.min && monthly <= contrib.max) {
+                        amount = contrib.value.toFixed(2)
+                    } 
+                })
+            }
+
+            return amount
         }
 
         function getWholding (salary) {
@@ -64,7 +74,11 @@ class Result extends Component {
         }
 
         function getTakehome(salary, wholding, sss, philhealth, pagibig) {
-            return (salary - (wholding + sss + philhealth + pagibig)).toFixed(2)
+            if (salary > 0) {
+                return (salary - (wholding + sss + philhealth + pagibig)).toFixed(2)
+            } else {
+                return 0
+            }
         }
 
         return (
@@ -73,7 +87,9 @@ class Result extends Component {
                     <Card style={style.wholdingCard}>
                         <CardTitle title="Take-Home Pay" subtitle="Monthly" />
                         <CardText style={style.cardText}>
-                            <p> &#8369; {(getTakehome(this.props.salaryToCompute, getWholding(this.props.salaryToCompute), 0, 0, 0))}</p>
+                            <p> &#8369; {(getTakehome(this.props.salaryToCompute, 
+                                getWholding(this.props.salaryToCompute), 0, 0, 
+                                this.props.pagibig))}</p>
                         </CardText>
                     </Card>
                     <h1 className="deduction-header">Deductions</h1>
@@ -90,7 +106,7 @@ class Result extends Component {
                             <Card style={style.normalCard}>
                                 <CardTitle title="SSS" subtitle="Contribution" />
                                 <CardText style={style.normalCardText}>
-                                    <p> &#8369; {(getWholding(this.props.salaryToCompute))}</p>
+                                    <p> &#8369; {getSss(this.props.salaryToCompute)}</p>
                                 </CardText>
                             </Card>
                         </Cell>
@@ -106,7 +122,7 @@ class Result extends Component {
                             <Card style={style.normalCard}>
                                 <CardTitle title="Pag-Ibig" subtitle="Contribution" />
                                 <CardText style={style.normalCardText}>
-                                    <p>&#8369; {(getWholding(this.props.salaryToCompute))}</p>
+                                    <p>&#8369; {this.props.pagibig}</p>
                                 </CardText>
                             </Card>
                         </Cell>
