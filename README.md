@@ -10,7 +10,8 @@ $ yarn start
 ```
 
 ## Thanks
-* [ReactJS](https://github.com/facebook/react/) - JavaScript library
-* [DOF Website](http://www.dof.gov.ph) - TRAIN Law explanation
-* [SSS Website](https://www.sss.gov.ph/) - Social Security System's Contribution Table
-* [Philhealth Website](https://www.philhealth.gov.ph) - Philhealth Contribution Table
+* [reactjs](https://github.com/facebook/react/) - JavaScript library
+* [react-md](https://github.com/mlaursen/react-md) - UI library
+* [dof website](http://www.dof.gov.ph) - TRAIN Law explanation
+* [sss website](https://www.sss.gov.ph/) - Social Security System's Contribution Table
+* [philhealth website](https://www.philhealth.gov.ph) - Philhealth Contribution Table
