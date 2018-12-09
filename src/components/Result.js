@@ -37,7 +37,7 @@ class Result extends Component {
                 amount = getExcessPercentage
             }
 
-            return (amount / 12).toFixed(2)
+            return (amount / 12)
         }
 
         function getSss(monthly) {
@@ -46,7 +46,7 @@ class Result extends Component {
             if (monthly >= 1000) {
                 getsssData.forEach(contrib => {
                     if (monthly >= contrib.min && monthly <= contrib.max) {
-                        amount = contrib.value.toFixed(2)
+                        amount = contrib.value
                     } 
                 })
             }
@@ -60,7 +60,7 @@ class Result extends Component {
 
             getPhData.forEach(contrib => {
                 if (monthly >= contrib.min && monthly <= contrib.max) {
-                    amount = contrib.value.toFixed(2)
+                    amount = contrib.value
                 }
             })
 
@@ -89,7 +89,8 @@ class Result extends Component {
 
         function getTakehome(salary, wholding, sss, philhealth, pagibig) {
             if (salary > 0) {
-                return (salary - (wholding + sss + philhealth + pagibig)).toFixed(2)
+                const deductions = wholding + sss + philhealth + pagibig
+                return (salary - deductions).toFixed(2)
             } else {
                 return 0
             }
@@ -102,7 +103,9 @@ class Result extends Component {
                         <CardTitle title="Take-Home Pay" subtitle="Monthly" />
                         <CardText style={style.cardText}>
                             <p> &#8369; {(getTakehome(this.props.salaryToCompute, 
-                                getWholding(this.props.salaryToCompute), 0, 0, 
+                                getWholding(this.props.salaryToCompute),
+                                getSss(this.props.salaryToCompute),
+                                getPhilhealth(this.props.salaryToCompute), 
                                 this.props.pagibig))}</p>
                         </CardText>
                     </Card>
@@ -112,7 +115,7 @@ class Result extends Component {
                             <Card style={style.normalCard}>
                                 <CardTitle title="Tax" subtitle="Withholding" />
                                 <CardText style={style.normalCardText}>
-                                    <p> &#8369; {(getWholding(this.props.salaryToCompute))}</p>
+                                    <p> &#8369; {getWholding(this.props.salaryToCompute).toFixed(2)}</p>
                                 </CardText>
                             </Card>
                         </Cell>
@@ -120,7 +123,7 @@ class Result extends Component {
                             <Card style={style.normalCard}>
                                 <CardTitle title="SSS" subtitle="Contribution" />
                                 <CardText style={style.normalCardText}>
-                                    <p> &#8369; {getSss(this.props.salaryToCompute)}</p>
+                                    <p> &#8369; {getSss(this.props.salaryToCompute).toFixed(2)}</p>
                                 </CardText>
                             </Card>
                         </Cell>
@@ -128,7 +131,7 @@ class Result extends Component {
                             <Card style={style.normalCard}>
                                 <CardTitle title="Philhealth" subtitle="Contribution" />
                                 <CardText style={style.normalCardText}>
-                                    <p>&#8369; {getPhilhealth(this.props.salaryToCompute)}</p>
+                                    <p>&#8369; {getPhilhealth(this.props.salaryToCompute).toFixed(2)}</p>
                                 </CardText>
                             </Card>
                         </Cell>
