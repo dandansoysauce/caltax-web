@@ -35,17 +35,6 @@ class Salary extends Component {
                         defaultValue={this.props.salary}
                         onChange={this.salaryTextChange}
                     />
-
-                    {/* <TextField
-                        id="pagibig"
-                        type="number"
-                        label="Monthly Pag-Ibig Contribution"
-                        lineDirection="center"
-                        placeholder="Amount"
-                        min={0}
-                        defaultValue={this.props.pagibig}
-                        onChange={this.pagibigTextChange}
-                    /> */}
                 </Paper>
 
                 <div className="train-info">

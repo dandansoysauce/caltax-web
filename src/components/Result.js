@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, CardText, Grid, Cell } from 'react-md'
+import { Card, CardTitle, CardText, Grid, Cell, Button } from 'react-md'
 import './Result.scss'
 import sssdata from '../data/sss.json'
 import wholding from '../data/wholding.json'
@@ -144,6 +144,7 @@ class Result extends Component {
                             </Card>
                         </Cell>
                     </Grid>
+                    <Button raised primary href={'https://github.com/dandansoysauce/caltax-web'}>Github</Button>
                 </div>
             </div>
         )
