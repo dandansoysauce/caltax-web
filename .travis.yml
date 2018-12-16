@@ -1,0 +1,12 @@
+language: node_js
+os: linux
+node_js:
+  - node
+script:
+  - yarn install
+  - yarn run build
+deploy:
+  provider: surge
+  project: ./build/
+  domain: caltax-web.surge.sh
+  skip_cleanup: true
