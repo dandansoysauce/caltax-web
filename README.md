@@ -1,4 +1,4 @@
-# CALTAX
+# CALTAX [![Build Status](https://travis-ci.org/dandansoysauce/caltax-web.svg?branch=master)](https://travis-ci.org/dandansoysauce/caltax-web)
 PH Withholding Tax Calculator with salary deductions (**SSS, Philhealth and Pag-Ibig**) under TRAIN Law.
 
 [Website](https://caltax-web.surge.sh/)
