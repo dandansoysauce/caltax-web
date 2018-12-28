@@ -145,6 +145,7 @@ class Result extends Component {
                         </Cell>
                     </Grid>
                     <Button raised primary href={'https://github.com/dandansoysauce/caltax-web'}>Github</Button>
+                    <Button className="play-button" raised primary href={'https://play.google.com/store/apps/details?id=com.daniona.caltax'}>Get This on Google Play Store</Button>
                 </div>
             </div>
         )
