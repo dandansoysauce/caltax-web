@@ -3,6 +3,8 @@ PH Withholding Tax Calculator with salary deductions (**SSS, Philhealth and Pag-
 
 [Website](https://caltax-web.surge.sh/)
 
+[Google Play Store](https://play.google.com/store/apps/details?id=com.daniona.caltax)
+
 ![alt text](https://raw.githubusercontent.com/dandansoysauce/caltax-web/master/public/caltax.png "Logo Title Text 1")
 
 ## Building
